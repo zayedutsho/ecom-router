@@ -1,14 +1,16 @@
 // import { useState } from 'react'
 
+import { RouterProvider } from 'react-router-dom'
 import './App.css'
-import Home from './Pages/Home'
+import router from './Components/Routes'
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-      <Home></Home>
+
+      <RouterProvider router={router}></RouterProvider>
     </>
   )
 }

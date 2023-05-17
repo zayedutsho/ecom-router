@@ -81,16 +81,23 @@ const Main = () => {
 
     const search = (e) => {
 
-        const filterArray = products.filter(product => product.title.toLocaleLowerCase().includes(e.target.value))
+        console.log(e.target.value)
+
+        const filterArray = products.filter(product => product.title.toLocaleLowerCase().includes(e.target.value.toLowerCase()))
 
         if (filterArray.length != 0) {
 
 
             setFilterProducts(filterArray)
+        } else {
+            console.log('title name wrong')
         }
 
 
     }
+
+
+
     return (
 
 
@@ -105,8 +112,8 @@ const Main = () => {
 
                 </div>
                 <div className='search flex justify-between items-center bg-gray-200 rounded px-5 py-2'>
-                    <input type="text" placeholder='search here' className='bg-transparent outline-0' onChange={search} />
-                    <button onClick={() => search()}
+                    <input type="text" placeholder='search here' className='bg-transparent outline-0' onChange={(e) => search(e)} />
+                    <button onClick={(e) => search(e)}
 
 
                     ><AiOutlineSearch></AiOutlineSearch></button>
